@@ -30,7 +30,7 @@
 <body>
     <div class="container">
         <h1>Upload WooCommerce Product File</h1>
-        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="http://127.0.0.1:5000/upload" method="POST" enctype="multipart/form-data">
             <input type="file" name="file" accept=".xlsx, .xls, .csv" required>                                
             <button type="submit">Upload File</button>
         </form>
@@ -53,7 +53,7 @@
             document.getElementById('progress').style.width = '0%';
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/upload', true);
+            xhr.open('POST', 'http://127.0.0.1:5000/upload', true);
             
             xhr.upload.onprogress = function(e) {
                 if (e.lengthComputable) {
